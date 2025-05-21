@@ -198,7 +198,7 @@ def test_models_accuracy(train_model):
 
         print(f"比較: {past_file} -> acc: {past_acc:.4f}, 現行: {current_acc:.4f}")
         
-        # 重要: 現行モデルが最低限、過去モデルと同等以上の精度であること
-        assert current_acc >= past_acc, (
+        # 現行モデルが最低限、過去モデルより良い精度であること
+        assert current_acc > past_acc, (
             f"{past_file} より精度が劣っています: {current_acc:.4f} vs {past_acc:.4f}"
         )
